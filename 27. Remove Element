@@ -1,0 +1,29 @@
+class Solution {
+    public int removeElement(int[] nums, int val) {
+       // List<Integer> test = new ArrayList<>();
+        int k = nums.length;
+        int j = 0;
+        while(j<k){
+            if(nums[j] == val){
+                //test.add(nums[i]);
+                // If the current element in the array nums at index j is equal to val
+    // We want to remove it from the array.
+
+    // Instead of removing it directly from the array, we can achieve this by
+    // overwriting the current element (nums[j]) with the last element of the
+    // array (nums[k - 1]). This effectively "removes" the element by making it
+    // the same as the last element.
+                nums[j]=nums[k - 1];
+                k--;
+            }
+            else{
+                // If the current element in the array nums at index j is not equal to val
+    // This means we want to keep this element.
+
+    // We increment j to move to the next element in the array.
+                j++;
+            }
+        }
+        return k;
+    }
+}
